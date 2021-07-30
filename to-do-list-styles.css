@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+main{
+    height: 100rem;
+}
+
+*{
+    margin: 0;
+    top: 0;
+    text-decoration: none;
+}
+body{
+    font-family: Lexend;
+    min-height: 50vh;
+}
+main{
+    
+    text-align: center;
+}
+main h1{
+    font-size: 1.5rem;
+    margin-top: 100;
+}
