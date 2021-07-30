@@ -9,14 +9,13 @@ document.querySelector('#moneyboxes-area').innerHTML = ' '
 
 function moneyboxSpawning(){
     document.querySelector('#moneyboxes-area').innerHTML += moneyboxExample
-    let frameHeight = document.querySelector('#try').style.height.split('rem')[0]
-    frameHeight = frameHeight - -10
-    document.querySelector('#try').style.height = frameHeight + 'rem'
+    let frameHeight = document.querySelector('#try').style.height.split('rem')[0]    
+    frameHeight -= -10
+    document.querySelector('#try').style.height = frameHeight + 'rem'      
 }
-                    
 for(let i = 0; i < targetsArray.length; i++){
     moneyboxSpawning()
-}
+}                
 let moneyboxArray = document.querySelectorAll('.moneybox-item')
 //Moneybox Elements
 let ruller = document.querySelectorAll('.ruller')
@@ -29,27 +28,26 @@ let targetName = document.querySelectorAll('#targetName')
 var widthToShow
 let maxWidth = 94.8
 
-
-window.onload = function moneyboxCalculating(i){
+function moneyboxCalculating(){
     for(let i = 0; i < targetsArray.length; i++){
-    
-    
-    
-    widthToShow = targetsArray[i].nowHave < targetsArray[i].mustHave ? (targetsArray[i].nowHave / targetsArray[i].mustHave) * maxWidth : maxWidth
-    ruller[i].style.width = widthToShow + '%'
-    
-    showAmount[i].textContent = targetsArray[i].nowHave
-    targetName[i].textContent = targetsArray[i].name
-    if(targetsArray[i].nowHave >= targetsArray[i].mustHave){
-        showAmount[i].classList.add('done')
-        showAmount[i].style.marginLeft = 'calc((' + widthToShow + '% - 3rem)/2)'
-        ruller[i].style.backgroundColor = 'rgba(7, 206, 50, 0.37)'
-    }   else{
-        showAmount[i].classList.add('in-process')
-        showAmount[i].style.marginLeft = widthToShow + '%'
+        widthToShow = targetsArray[i].nowHave < targetsArray[i].mustHave ? (targetsArray[i].nowHave / targetsArray[i].mustHave) * maxWidth : maxWidth
+        ruller[i].style.width = widthToShow + '%'
+        moneyboxArray[i].id = 'moneyboxItem' + i
+        showAmount[i].textContent = targetsArray[i].nowHave
+        targetName[i].textContent = targetsArray[i].name
+        if(targetsArray[i].nowHave >= targetsArray[i].mustHave){
+            showAmount[i].classList.add('done')
+            showAmount[i].style.marginLeft = 'calc((' + widthToShow + '% - 3rem)/2)'
+            ruller[i].style.backgroundColor = 'rgba(7, 206, 50, 0.37)'
+        }   else{
+            showAmount[i].classList.add('in-process')
+            showAmount[i].style.marginLeft = widthToShow + '%'
+        }      
     }
 }
-}
+
+
+window.onload = moneyboxCalculating()
 
 
 
@@ -57,5 +55,5 @@ window.onload = function moneyboxCalculating(i){
 ////Control Buttons
 let delButton = document.querySelectorAll('.delete')
 function deleteTarget(){
-    console.log(delButton.indexof(this))
+    console.log(targetsArray.splice(0,1))
 }
