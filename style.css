@@ -1,0 +1,238 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+html{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    box-sizing: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    box-shadow: inset 0 0 10px #000000;
+    min-height: 100vh;
+    font-family: Lexend;
+    background-color: rgb(6, 49, 25);
+}
+
+
+/*HEADER*/
+header{
+    margin: auto;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: rgb(6, 49, 25);
+    height: 3.5rem;
+    width: 100%;
+    position: sticky;
+    z-index: 2;
+    margin-bottom: 2.5rem;
+    padding-top: 0.5%;
+    transition: 0.4s;
+}
+h1.header-text{
+    margin: auto;
+    border-radius: 20px;
+    width: 30%;
+    transition: 0.4s;
+    cursor: pointer;
+}
+h1.header-text:hover{
+    box-shadow: rgba(0, 0, 0) 3px 4px 0px 3px, rgba(0, 0, 0) 3px 4px 6px 3px;
+    transform: translateX(-1%) translateY(-1%);
+
+}
+
+/*MAIN-BLOCK*/
+main{
+    margin: auto;
+    width: 70%;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0) 3px 4px 0px 3px, rgba(0, 0, 0) 3px 4px 6px 3px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+
+/*NAVIGATION*/
+nav.navbar{
+    width: 20%;
+}
+
+
+nav.navbar h2{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: rgb(9, 58, 31);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0) 1px 2px 0px 1px, rgba(0, 0, 0) 1px 2px 3px 2px;
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-bottom: 12%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+
+
+nav.navbar ul{
+    padding: 0rem;
+
+}
+
+
+
+nav.navbar li{
+    position: relative;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    list-style: none;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+    z-index: 2;
+    margin-bottom: 1%;
+    background: rgba(6, 49, 25, 1);
+    background: linear-gradient(90deg, rgba(6, 49, 25, 0) 40%, rgba(255,255,255,1) 60%);
+    background-size: 250% 100%;
+    background-position:left bottom;
+}
+nav.navbar li.active{
+    color: black;
+    background-position:right bottom;
+}
+nav.navbar li p.text{
+    z-index: 10;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    padding-left: 1rem;
+    height: 100%;
+    text-align: center;
+    transition: 0.3s ease;
+    background: rgba(6, 49, 25, 1);
+    background: linear-gradient(90deg, rgba(6, 49, 25, 0) 40%, rgba(255,255,255,1) 60%);
+    background-size: 250% 100%;
+    background-position:left bottom;
+}
+nav.navbar li:hover p.text{
+    margin: auto;
+    border-radius: 20px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0) 1px 2px 0px 1px, rgba(0, 0, 0) 1px 2px 3px 2px;
+    transform: translateX(-1%) translateY(-1%);
+    background-position:right bottom;
+    color: black;
+}
+
+
+/**Iframe**/
+iframe{
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    min-height: 44vh;
+    transition: 0.4s;
+}
+
+
+
+/**OUTSIDE CURVES**/
+ul.nav-list li.active .pseudo-top::before{
+    content: "";
+  position:absolute;
+  top:-20px;
+  right:0;
+  height:20px;
+  width: 20px;
+  border-bottom-right-radius: 50%;
+  background-color: rgba(6, 49, 25, 0);
+  box-shadow: 0 10px 0 0 white;
+  display: block;
+  opacity: 1;
+}
+ul.nav-list li .pseudo-top::before{
+    display: none;
+    opacity: 0;
+}
+ul.nav-list li.active .pseudo-bottom::before{
+    content: "";
+  position:absolute;
+  bottom:-20px;
+  right:0;
+  height:20px;
+  width: 20px;
+  border-top-right-radius: 50%;
+  background-color: rgba(6, 49, 25, 0);
+  box-shadow: 10px 0 0 white;
+  display: block;
+  opacity: 1;
+}
+ul.nav-list li .pseudo-bottom::before{
+    display: none;
+    opacity: 0;
+}
+
+
+@media (max-aspect-ratio: 1/1){
+    body{
+        width: 100%;
+        padding: 0vh;
+    }
+    header{
+        font-size: 0.5rem;
+        height: 1rem;
+    }
+    main{
+        width: 100%;
+        height: 100vh;
+        padding: 0vh;
+        box-shadow: none ;
+    }
+    nav.navbar{
+        padding: 0vh;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vh;
+    }
+    nav.navbar h2{
+        display: none;
+    }
+    nav.navbar ul{
+        padding: 0vh;
+        width: 100vh;
+        display: flex;
+    }
+    iframe{
+        width: 100%;
+        margin: auto;
+        
+    }
+}
+
+
+/*Footer*/
+footer{
+    position: static;
+    height: 7rem;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    line-height: 7rem;
+    bottom: 0;
+}
