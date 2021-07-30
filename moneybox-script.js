@@ -56,5 +56,5 @@ window.onload = moneyboxCalculating()
 ////Control Buttons
 
 function deleteTarget(clicked_id){
-    moneyboxArray.splice(clicked_id.split('moneyboxItem')[0], 1)
+    targetsArray.splice(clicked_id.split('moneyboxItem')[0], 1)
 }
