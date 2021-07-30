@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiTool</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-text">Max's MultiTool</h1>
+    </header>
+    <main>
+        <nav class="navbar">
+            <h2 id="placeToLoad">NAVIGATION</h2>
+            <ul class="nav-list tabs group">
+                <li id="income" onclick="changingContent(this.id)" class="nav-item1 active">
+                    <p class="pseudo-top"></p>
+                    <p class="pseudo-bottom"></p>
+                    <p class="text">INCOME</p>
+                </li>
+                <li id="spendings" onclick="changingContent(this.id)" class="nav-item2">
+                    <p class="pseudo-top"></p>
+                    <p class="pseudo-bottom"></p>
+                    <p class="text">SPENDINGS</p>
+                </li>
+                <li id="moneybox" onclick="changingContent(this.id)" class="nav-item3">
+                    <p class="pseudo-top"></p>
+                    <p class="pseudo-bottom"></p>
+                    <p class="text">MONEYBOX</p>
+                </li>
+                <li id="to-do-list" onclick="changingContent(this.id)" class="nav-item4">
+                    <p class="pseudo-top"></p>
+                    <p class="pseudo-bottom"></p>
+                    <p class="text"> TO-DO LIST</p>
+                </li>
+                <li id="schedule" onclick="changingContent(this.id)" class="nav-item5 nav-item">
+                    <p class="pseudo-top"></p>
+                    <p class="pseudo-bottom"></p>
+                    <p class="text"> SCHEDULE</p>
+                </li>
+            </ul>
+        </nav>
+            <iframe id="main-frame" src="pages/income/income.html" frameborder="0" title="main-frame"></iframe>
+        
+    </main>
+
+
+
+
+    <footer>
+        <h1>Thank You for using our service</h1>
+    </footer>
+    <!--Scripts-->
+    <script src="scripts/script.js"></script>
+</body>
+</html>
