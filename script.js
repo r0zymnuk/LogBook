@@ -15,7 +15,7 @@ function changingContent(clicked_id){
     document.querySelector('#' + active).classList.toggle('active')
     active = clicked_id
 
-    mainFrame.src = 'pages/' + clicked_id + '/' + clicked_id + '.html'
+    mainFrame.src = clicked_id + '.html'
     if(clicked_id == 'moneybox'){
         mainFrame.style.height = '100vh'
     }else if(clicked_id == 'income'){
