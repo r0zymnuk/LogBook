@@ -22,7 +22,7 @@ let ruller = document.querySelectorAll('.ruller')
 let showAmount = document.querySelectorAll('#show-amount')
 let targetName = document.querySelectorAll('#targetName')
 
-
+let delButton = document.querySelectorAll('.delete')
 //Moneybox Calculating
 
 var widthToShow
@@ -33,6 +33,7 @@ function moneyboxCalculating(){
         widthToShow = targetsArray[i].nowHave < targetsArray[i].mustHave ? (targetsArray[i].nowHave / targetsArray[i].mustHave) * maxWidth : maxWidth
         ruller[i].style.width = widthToShow + '%'
         moneyboxArray[i].id = 'moneyboxItem' + i
+        delButton[i].id = 'moneyboxItem' + i
         showAmount[i].textContent = targetsArray[i].nowHave
         targetName[i].textContent = targetsArray[i].name
         if(targetsArray[i].nowHave >= targetsArray[i].mustHave){
@@ -53,7 +54,7 @@ window.onload = moneyboxCalculating()
 
 
 ////Control Buttons
-let delButton = document.querySelectorAll('.delete')
-function deleteTarget(){
-    console.log(targetsArray.splice(0,1))
+
+function deleteTarget(clicked_id){
+    moneyboxArray.splice(clicked_id.split('moneyboxItem')[0], 1)
 }
