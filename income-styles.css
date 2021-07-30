@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: Lexend;
+    margin: auto;
+}
+
+
+/**Main Container**/
+main{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+main .heading{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/**Income Graph**/
+div.income-graph{
+    background-color: rgba(128, 128, 128, 0.5);
+    margin: auto;
+    width: 95%;
+    border-radius: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    display: flex;
+}
+div.income-graph .hr-cont{
+    width: 90%;
+    margin: auto;
+}
+div.income-graph .hr-cont hr{
+    margin-bottom: 3rem;
+}
+div.income-graph .hr-cont hr.last-hr{
+    margin-bottom: 0;
+}
+div.income-graph .amount-cont{
+    width: 10%;
+}
+div.income-graph .amount-cont p{
+    height: 3rem;
+    position: static;
+    margin-bottom: 30rem;
+}
+div.income-graph .amount-cont p.zero{
+    height: 3rem;
+    margin-bottom: 0;
+}
