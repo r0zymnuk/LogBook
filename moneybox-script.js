@@ -52,7 +52,6 @@ window.onload = moneyboxCalculating()
 
 
 ////Control Buttons
-
 function deleteTarget(clicked_id){
-    console.log(targetsArray[0])
+    moneyboxArray[clicked_id].style.display = 'none'
 }
