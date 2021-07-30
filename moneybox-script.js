@@ -4,8 +4,6 @@ let targetsArray = [{name:'Audi A4',nowHave:15750,mustHave:42000,timeLeft:'487 d
                     {name:'Seat Leon',nowHave:54200,mustHave:26000,timeLeft:'185 days'}]
 
 let moneyboxExample = document.querySelector('#moneyboxes-area').innerHTML
-document.querySelector('#moneyboxes-area').innerHTML = ' '
-
 
 function moneyboxSpawning(){
     document.querySelector('#moneyboxes-area').innerHTML += moneyboxExample
@@ -13,7 +11,7 @@ function moneyboxSpawning(){
     frameHeight -= -10
     document.querySelector('#try').style.height = frameHeight + 'rem'      
 }
-for(let i = 0; i < targetsArray.length; i++){
+for(let i = 1; i < targetsArray.length; i++){
     moneyboxSpawning()
 }                
 let moneyboxArray = document.querySelectorAll('.moneybox-item')
@@ -33,7 +31,7 @@ function moneyboxCalculating(){
         widthToShow = targetsArray[i].nowHave < targetsArray[i].mustHave ? (targetsArray[i].nowHave / targetsArray[i].mustHave) * maxWidth : maxWidth
         ruller[i].style.width = widthToShow + '%'
         moneyboxArray[i].id = 'moneyboxItem' + i
-        delButton[i].id = 'moneyboxItem' + i
+        delButton[i].id = i
         showAmount[i].textContent = targetsArray[i].nowHave
         targetName[i].textContent = targetsArray[i].name
         if(targetsArray[i].nowHave >= targetsArray[i].mustHave){
@@ -56,5 +54,5 @@ window.onload = moneyboxCalculating()
 ////Control Buttons
 
 function deleteTarget(clicked_id){
-    targetsArray.splice(clicked_id.split('moneyboxItem')[0], 1)
+    console.log(targetsArray[0])
 }
