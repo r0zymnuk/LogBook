@@ -55,3 +55,7 @@ window.onload = function moneyboxCalculating(i){
 
 
 ////Control Buttons
+let delButton = document.querySelectorAll('.delete')
+function deleteTarget(){
+    console.log(delButton.indexof(this))
+}
